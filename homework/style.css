@@ -1,0 +1,247 @@
+/* :root{ 
+    --main-bg-color: rgb(231, 122, 122); 
+}
+
+body{
+    background-color: var(--main-bg-color);
+} */
+.checkbox{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 10px;
+    left: 5px;
+    margin: auto;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.container label{
+    position: absolute;
+    width: 45px;
+    height: 5px;
+    top: 30px;
+    margin: auto;
+    background-color: rgb(255, 0, 0);
+    border-radius: 5px;
+    display: block;
+    z-index: 1;
+    transition: all .5s ease;
+}
+
+.container label::after , .container label::before{
+    content: " ";
+    position: absolute;
+    width: 45px;
+    height: 5px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 5px;
+    display: block;
+    z-index: 1;
+    transition: all .5s ease;
+}
+
+.container label::after {
+    top: -12px;
+
+}
+
+.container label::before {
+    top: 12px;
+
+}
+
+.checkbox:checked + label{
+    background: transparent;
+    transition: all .5s ease;
+}
+
+.checkbox:checked + label::after,
+.checkbox:checked + label::before{
+    width: 45px;
+    top: 0;
+    transition: all .5s ease;
+}
+
+.checkbox:checked + label::after{
+    transform: rotate(45deg);
+
+}
+
+.checkbox:checked + label::before{
+    transform: rotate(-45deg);
+} 
+
+.menu ul{
+    display: flex;
+    position: absolute;
+    top: 10%;
+    left: 17%;
+    right: 17%;
+}
+
+li{
+    margin: auto;
+    list-style: none;
+    margin-top: 50px;
+    opacity: 0;
+    transition: 1s;
+}
+a{
+    text-decoration: none;
+    font-size: 27px;
+    color:white ;
+}
+
+a::after{
+    content: " ";
+    background-color: rgb(0, 255, 38);
+    display: block;
+    position: absolute;
+    width: 0px;
+    height: 4px;
+    border-radius: 5px; 
+    transition: 1.5s;
+}
+
+li:hover a::after{
+    width: 80px;
+    transition: 1.5s;
+}
+
+.text{
+    position: absolute;
+    top: 30%;
+    left: 48%;
+    margin-top: 30px;
+    opacity: 0;
+    transition: 0.9s;
+}
+
+.parent{
+    position: absolute;
+    display: flex;
+    height: 80%;
+    top: 40%;
+    left: 19%;
+    right: 15%;
+    justify-content: space-between;
+}
+
+.child{
+    width: calc(97% / 4);
+    height: 300px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 300px;
+    opacity: 0;
+}
+
+.child img{
+    width: 100%;
+    height: 100%;
+    transition: 2s;
+    z-index: 2;
+    
+}
+
+.child:hover img{
+    transform: scale(1.7) ;
+    transition: 2s;
+    
+}
+
+.one {
+    /* display: flex; */
+    height: 80%;
+    font-size: 19px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(130, 0, 251);
+    top: 29%;
+    margin-left: 65px;
+    transition:all .2s;
+    z-index: 1;
+}
+
+img:hover + .one{
+    transition: 2s;
+    position: absolute;
+}
+
+.checkbox:checked ~ .all .parent .child{
+    margin-top: 0px;
+    
+ }
+
+ .checkbox:checked ~ .all .parent .child:nth-child(1){
+    margin-top: 0px;
+    transition: 0.5s;
+    opacity: 1;
+ }
+
+ .checkbox:checked ~ .all .parent .child:nth-child(2){
+    margin-top: 0px;
+    transition: 0.7s;
+    opacity: 1;
+ }
+ .checkbox:checked ~ .all .parent .child:nth-child(3){
+    margin-top: 0px;
+    transition: 0.9s;
+    opacity: 1;
+ }
+ .checkbox:checked ~ .all .parent .child:nth-child(4){
+    margin-top: 0px;
+    transition: 1.2s;
+    opacity: 1;
+ }
+
+ .checkbox:checked ~ .all .menu ul li:nth-child(1){
+    margin-top: 0px;
+    transition: 0.5s;
+    opacity: 1;
+ }
+
+ .checkbox:checked ~ .all .menu ul li:nth-child(2){
+    margin-top: 0px;
+    transition: 0.7s;
+    opacity: 1;
+ }
+
+ .checkbox:checked ~ .all .menu ul li:nth-child(3){
+    margin-top: 0px;
+    transition: 0.9s;
+    opacity: 1;
+ }
+
+ .checkbox:checked ~ .all .menu ul li:nth-child(4){
+    margin-top: 0px;
+    transition: 1.2s;
+    opacity: 1;
+ }
+
+ .checkbox:checked ~ .all .text {
+    margin-top: 0px;
+    transition: 0.8s;
+    opacity: 1;
+    color: white;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+.all{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    transition: 1s;
+}
+*{
+    margin: 0%;
+}
+
+.checkbox:checked ~ .all{
+    background-color: rgb(68, 66, 66);
+    transition: 1s;
+}
